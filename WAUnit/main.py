@@ -52,8 +52,7 @@ def MainProxy():
     # Configuration file
     if(os.path.isfile(args.config_file)):
     #use ~/.mitmproxy/mitmproxy-ca.pem as default CA file.
-        proxyconfig = ProxyConfig(port = config.getint('Proxy', 'port'),
-        cadir = "~/.mitmproxy/")
+        proxyconfig = ProxyConfig(port = config.getint('Proxy', 'port'))
         state = flow.State()
         server = ProxyServer(proxyconfig)
         try:
